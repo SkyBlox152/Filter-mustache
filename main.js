@@ -2,7 +2,7 @@ var noseX=0;
 var noseY=0;
 
 function preload(){
-
+img=loadImage("https://i.postimg.cc/DZ2mChMr/real-mustache-removebg-preview.png")
 }
 
 function setup(){
@@ -18,6 +18,7 @@ function setup(){
 
 function draw(){
     image(video, 0,0,300,300);
+    image(img,noseX,noseY,70,40);
 }
 
 function take_snap(){
@@ -33,8 +34,8 @@ function gotPoses(results)
     if(results.length>0)
     {
         console.log(results);
-        noseX=results[0].pose.nose.x;
-        noseY=results[0].pose.nose.y;
+        noseX=results[0].pose.nose.x -30;
+        noseY=results[0].pose.nose.y +7;
         console.log("nose x="+ results[0].pose.nose.x)
         console.log("nose y=" + results[0].pose.nose.y)
     }
